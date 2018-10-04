@@ -1,0 +1,11 @@
+[SddmGreeterTheme]
+Name=simple
+Description=simple Sddm Theme
+Author=Anton Fehsenmayr
+License=
+Type=sddm-theme
+Version=1.0
+MainScript=Main.qml
+ConfigFile=theme.conf
+Theme-Id=simple
+Theme-API=2.0
