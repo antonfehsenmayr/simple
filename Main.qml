@@ -33,17 +33,10 @@ Rectangle {
     Connections {
         target: sddm
 
-	onLoginSucceeded: {
-	    errorMessage.color = "green"
-	    errorMessage.text = "loginSucceeded"
-	}
-
 	onLoginFailed: {
 	    username.text = ""
 	    password.text = ""
 	    username.focus = true
-	    errorMessage.color = "red"
-	    errorMessage.text = "loginFalied"
 	}
     }
 
@@ -72,13 +65,14 @@ Rectangle {
     Rectangle {
         id: actions
 	anchors.fill: parent
-	anchors.bottomMargin: 980
-	anchors.leftMargin: 1850
 	color: "transparent"
 
 	Column {
 	    id: settings
-	    anchors.centerIn: parent
+	    anchors.right: parent.right
+	    anchors.top: parent.top
+	    anchors.rightMargin: 10
+	    anchors.topMargin: 10
 	    spacing: 18
 
 	    ImageButton {
@@ -102,23 +96,23 @@ Rectangle {
     }
 
     Rectangle {
-    	id: feld
+    	id: loginfield
 	anchors.fill: parent
-	anchors.topMargin: 550
-	anchors.bottomMargin: 350
-	anchors.leftMargin: 750
-	anchors.rightMargin: 750
-
+	anchors.topMargin: parent.height / 2
+	anchors.bottomMargin: parent.height / 3
+	anchors.leftMargin: 32 * parent.width / 80
+	anchors.rightMargin: 32 * parent.width / 80
 	border.color: "white"
 	border.width: 2
 	radius: 2
 	color: "transparent"
 
 	Column {
-	    id: mainfield
+	    id: login
 	    anchors.centerIn: parent
-	    width: parent.width / 2
+	    width: 2 * parent.width / 3
 	    spacing: 5
+	    
 	    Text {
 	    	color: "white"
 		text: "username:"
